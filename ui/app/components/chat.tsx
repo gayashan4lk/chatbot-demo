@@ -16,16 +16,13 @@ export default function Chat() {
     message: string,
     onMessage: (chunk: string) => void
   ) {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/chat`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message }),
-      }
-    );
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URLL}/chat`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message }),
+    });
 
     const reader = response.body?.getReader();
     const decoder = new TextDecoder();
