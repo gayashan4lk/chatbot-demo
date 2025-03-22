@@ -136,6 +136,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# env files (can opt-in for committing if needed)
+.env*
+
 # Spyder project settings
 .spyderproject
 .spyproject

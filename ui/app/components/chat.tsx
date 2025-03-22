@@ -16,7 +16,7 @@ export default function Chat() {
     message: string,
     onMessage: (chunk: string) => void
   ) {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URLL}/chat`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/chat`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
