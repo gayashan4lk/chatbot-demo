@@ -19,7 +19,7 @@ export default function Chat() {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/chat`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "text/event-stream",
       },
       body: JSON.stringify({ message }),
     });
@@ -41,7 +41,7 @@ export default function Chat() {
       const chunk = decoder.decode(value, { stream: true });
       console.log(chunk);
       result += chunk;
-      onMessage(chunk);
+      onMessage(result);
     }
   }
 
